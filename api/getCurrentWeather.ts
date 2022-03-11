@@ -19,7 +19,7 @@ export const getCurrentWeather = async (): Promise<CurrentWeatherData> => {
     currentTemperature: convertKelvinToCelcius(data.main.temp),
     maximumTemperature: convertKelvinToCelcius(data.main.temp_max),
     minimumTemperature: convertKelvinToCelcius(data.main.temp_min),
-    feelsLikeTemperature: convertKelvinToCelcius(data.main.temp),
+    feelsLikeTemperature: convertKelvinToCelcius(data.main.feels_like),
     windSpeed: Math.round(Number(data.wind.speed)),
     visibility: data.visibility,
   };
