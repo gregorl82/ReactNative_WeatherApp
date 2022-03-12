@@ -1,8 +1,7 @@
+export type Coordinates = { lat: number; lon: number };
+
 export interface CurrentWeatherApiData {
-  coord: {
-    lon: number;
-    lat: number;
-  };
+  coord: Coordinates;
   weather: {
     id: number;
     main: string;
