@@ -4,9 +4,12 @@ import { CurrentWeatherApiData, CurrentWeatherData } from './apiTypes';
 import { API_KEY } from './config';
 import { convertKelvinToCelcius } from './util';
 
-export const getCurrentWeather = async (): Promise<CurrentWeatherData> => {
+export const getCurrentWeather = async (
+  lat: number = 55.9533,
+  lon: number = 3.1883
+): Promise<CurrentWeatherData> => {
   const { status, data } = await axios.get<CurrentWeatherApiData>(
-    `https://api.openweathermap.org/data/2.5/weather?lat=55.9533&lon=-3.1883&appid=${API_KEY}`
+    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`
   );
 
   if (status !== 200) {
