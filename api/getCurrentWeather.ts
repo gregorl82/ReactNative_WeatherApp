@@ -9,7 +9,7 @@ import { API_KEY } from './config';
 import { convertKelvinToCelcius } from './util';
 
 export const getCurrentWeather = async (
-  coordinates: Coordinates = { lat: 55.9533, lon: 3.1883 }
+  coordinates: Coordinates = { lat: 55.8642, lon: -4.2518 }
 ): Promise<CurrentWeatherData> => {
   const { status, data } = await axios.get<CurrentWeatherApiData>(
     `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${API_KEY}`
@@ -20,7 +20,7 @@ export const getCurrentWeather = async (
   }
 
   return {
-    location: data.name,
+    location: `${data.name}, ${data.sys.country}`,
     weatherDescription: data.weather[0].main,
     currentTemperature: convertKelvinToCelcius(data.main.temp),
     maximumTemperature: convertKelvinToCelcius(data.main.temp_max),
