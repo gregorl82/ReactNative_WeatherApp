@@ -9,7 +9,7 @@ type IoniconName = React.ComponentProps<typeof Ionicons>['name'];
 
 const Tab = createBottomTabNavigator();
 
-export const BottomTabs = () => {
+export const MainNavigation = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -26,8 +26,11 @@ export const BottomTabs = () => {
               iconName = focused ? 'settings' : 'settings-outline';
             }
 
-            return <Ionicons name={iconName} color={'black'} size={24} />;
+            return <Ionicons name={iconName} color={color} size={size} />;
           },
+          tabBarActiveTintColor: 'tomato',
+          tabBarInactiveTintColor: 'lightgray',
+          tabBarIconStyle: { fontSize: 24 },
         })}
       >
         <Tab.Screen

@@ -1,5 +1,5 @@
-import { BottomTabs } from './navigation/BottomTabs';
+import { MainNavigation } from './navigation/MainNavigation';
 
 export default function App() {
-  return <BottomTabs />;
+  return <MainNavigation />;
 }
