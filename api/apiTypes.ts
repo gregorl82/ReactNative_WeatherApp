@@ -135,3 +135,8 @@ export interface AppSettings {
   isMetric: boolean;
   storedLocations: { name: string; country: string; coords: Coordinates }[];
 }
+
+export enum UnitOfMeasure {
+  Metric = 'metric',
+  Imperial = 'imperial',
+}

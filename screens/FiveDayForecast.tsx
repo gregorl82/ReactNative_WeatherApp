@@ -9,7 +9,7 @@ const WeatherItem: React.FC<{ data: WeatherData }> = ({
   return (
     <View style={{ flexDirection: 'row' }}>
       <Text>{data.weatherDescription}</Text>
-      <Text>Current temp: {data.currentTemperature.toString()}°C</Text>
+      <Text>Temp: {data.currentTemperature.toString()}°C</Text>
       <Text>Max temp: {data.maximumTemperature.toString()}°C</Text>
       <Text>Min temp: {data.minimumTemperature.toString()}°C</Text>
       <Text>{data.date}</Text>
