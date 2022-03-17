@@ -130,3 +130,8 @@ export interface FiveDayForecastData {
   location: string;
   forecastData: WeatherData[];
 }
+
+export interface AppSettings {
+  isMetric: boolean;
+  storedLocations: { name: string; country: string; coords: Coordinates }[];
+}
